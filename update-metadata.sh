@@ -8,6 +8,7 @@ knife cookbook metadata build-essential -o cookbooks/
 knife cookbook metadata collectd -o cookbooks/; rm cookbooks/collectd/.gitignore
 knife cookbook metadata collectd_plugins -o cookbooks/; rm cookbooks/collectd_plugins/.gitignore
 knife cookbook metadata cron -o cookbooks/
+knife cookbook metadata fog -o cookbooks/
 knife cookbook metadata ntp -o cookbooks/
 knife cookbook metadata postfix -o cookbooks/
 knife cookbook metadata python -o cookbooks/
