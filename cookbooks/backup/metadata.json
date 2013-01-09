@@ -1,0 +1,189 @@
+{
+  "name": "backup",
+  "description": "Installs/Configures backup",
+  "long_description": "!http://greenteaandbiscuits.files.wordpress.com/2010/08/chef.jpg!\n\nh1. Chef Backup\n\nA cookbook for adding offsite backups to your webserver. Installs all the gems necessary.\nRequires a bit of pre-configuration before running the cookbook.\n\nAssumes database and directory backup, with an s3sync to an amazon s3 bucket.\n\n* You need to create the bucket on s3. (currently set to us-east-1 region)\n* Copy amazon access keys to ~/.aws/secret_key and ~/.aws/access_key\n* Database passwords\n* Directories to sync.\n\nYou should be familiar with the \"backup gem\":https://github.com/meskyanichi/backup \n\nNote: This cookbook is in early stages so improvements and contributions are encouraged!\n\nh2. Installation\n\nI recommend \"knife github cookbooks\":https://github.com/websterclay/knife-github-cookbooks for installing this cookbook into your chef repository.",
+  "maintainer": "Blissio",
+  "maintainer_email": "alastair@blissio.com",
+  "license": "MIT",
+  "platforms": {
+  },
+  "dependencies": {
+    "aws": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "backup/user": {
+      "display_name": "Backup User",
+      "description": "The system user for backups.",
+      "required": "recommended",
+      "default": "root",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/name": {
+      "display_name": "Backup default name",
+      "description": "The the default name for backups.",
+      "required": "optional",
+      "default": "server_backup",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/description": {
+      "display_name": "Backup default description",
+      "description": "The the default description for backups.",
+      "required": "optional",
+      "default": "a chef generated server backup",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/database/username": {
+      "display_name": "Backup database user",
+      "description": "The db user for database-related backups.",
+      "required": "optional",
+      "default": "admin_user",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/database/password": {
+      "display_name": "Backup database user",
+      "description": "The db pasword for database-related backups.",
+      "required": "optional",
+      "default": [
+        "mysql",
+        "test"
+      ],
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/s3/bucket_region": {
+      "display_name": "Backup S3 bucket region",
+      "description": "The default region for S3 buckets used with S3 related backups.",
+      "required": "optional",
+      "default": "us-east-1",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/s3/bucket_name": {
+      "display_name": "Backup S3 bucket name",
+      "description": "The default S3 bucket name used with S3 related backups.",
+      "required": "optional",
+      "default": "us-east-1",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/s3/keep": {
+      "display_name": "Backup S3 keep",
+      "description": "The number of S3 backets to keep with S3 related backups.",
+      "required": "recommended",
+      "default": "10",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/mail/on_success": {
+      "display_name": "Backup mail on failure",
+      "description": "Whether to email someone on failure of a backup.",
+      "required": "optional",
+      "default": "true",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "backup/mail/from_address": {
+      "display_name": "Backup mail To: address",
+      "description": "The email address mails should be sent to.",
+      "required": "optional",
+      "default": "backup@doesnotexist.com",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "aws/aws_access_key_id": {
+      "display_name": "AWS Secret Access Key",
+      "description": "The AWS secret access key to be used with EC2 related backups.",
+      "required": "recommended",
+      "default": "aws_secret_access_key",
+      "recipes": [
+        "aws",
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "backup": "Sets up the backup RubyGem (plus configuration) and it's depenencies."
+  },
+  "version": "0.0.1"
+}

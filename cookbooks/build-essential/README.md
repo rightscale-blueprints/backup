@@ -12,8 +12,13 @@ Requirements
 
 Supported platforms by platform family:
 
-* Linux (debian, rhel, fedora)
+* Linux (fedora redhat centos ubuntu debian amazon scientific)
 * Darwin (`mac_os_x` 10.6+)
+* SmartOs
+
+## Cookbooks
+
+Requires `pkgin` cookbook on SmartOS
 
 Attributes
 ==========
@@ -82,7 +87,7 @@ Example role:
       "recipe[myapp]"
     )
     default_attributes(
-      "build-essential" => {
+      "build_essential" => {
         "compiletime" => true
       }
     )
