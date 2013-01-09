@@ -27,7 +27,7 @@
       "required": "recommended",
       "default": "root",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -41,7 +41,7 @@
       "required": "optional",
       "default": "server_backup",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -55,7 +55,7 @@
       "required": "optional",
       "default": "a chef generated server backup",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -69,7 +69,7 @@
       "required": "optional",
       "default": "mysql",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -82,7 +82,7 @@
       "description": "The db pasword for database-related backups.",
       "required": "optional",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -96,7 +96,7 @@
       "required": "optional",
       "default": "us-east-1",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -109,7 +109,7 @@
       "description": "The default S3 bucket name used with S3 related backups.",
       "required": "optional",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -123,7 +123,7 @@
       "required": "recommended",
       "default": "10",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -137,7 +137,7 @@
       "required": "optional",
       "default": "true",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -151,7 +151,7 @@
       "required": "optional",
       "default": "backup@doesnotexist.com",
       "recipes": [
-        "backup"
+        "backup::default"
       ],
       "choice": [
 
@@ -165,8 +165,8 @@
       "required": "recommended",
       "default": "YOUR_ACCESS_KEY",
       "recipes": [
-        "aws",
-        "backup"
+        "aws::default",
+        "backup::default"
       ],
       "choice": [
 
@@ -180,8 +180,8 @@
       "required": "recommended",
       "default": "YOUR_SECRET_ACCESS_KEY",
       "recipes": [
-        "aws",
-        "backup"
+        "aws::default",
+        "backup::default"
       ],
       "choice": [
 
@@ -193,7 +193,7 @@
   "groupings": {
   },
   "recipes": {
-    "backup": "Sets up the backup RubyGem (plus configuration) and it's depenencies."
+    "backup": "Sets up the backup RubyGem (plus configuration) and it's dependencies."
   },
   "version": "0.0.1"
 }
