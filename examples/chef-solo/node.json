@@ -1,0 +1,18 @@
+{
+  "system": {
+    "timezone":"UTC"
+  },
+  "authorization": {
+    "sudo": {
+      "groups": [ "vagrant" ],
+      "users": [ "vagrant" ],
+      "passwordless":"true",
+      "include_sudoers_d":"true"
+    }
+  },
+  "aws": {
+    "aws_access_key_id":"YOUR_ACCESS_KEY",
+    "aws_secret_access_key":"YOUR_SECRET_ACCESS_KEY"
+  },
+  "run_list": [ "recipe[system]", "recipe[ntp]", "recipe[resolver]", "recipe[cron]", "recipe[sudo]", "recipe[backup]" ]
+}
