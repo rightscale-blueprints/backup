@@ -38,7 +38,7 @@ attribute "backup/database/username",
   :recipes => [ "backup" ]
 
 attribute "backup/database/password",
-  :display_name => "Backup database user",
+  :display_name => "Backup database password",
   :description => "The db pasword for database-related backups.",
   :required => "optional",
   :recipes => [ "backup" ]

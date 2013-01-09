@@ -15,7 +15,7 @@ GIT
 GIT
   remote: https://github.com/flaccid/chef-backup
   ref: master
-  sha: d762e9aebede6ce8e6a5915750ad46e6c8e47549
+  sha: 6450e32466d66b1f456cf4c37cd50825908a175c
   specs:
     backup (0.0.1)
       aws (>= 0.0.0)
