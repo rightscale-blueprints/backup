@@ -77,14 +77,24 @@
       "calculated": false,
       "type": "string"
     },
+    "backup/database/user": {
+      "display_name": "Backup database user",
+      "description": "The db pasword for database-related backups.",
+      "required": "optional",
+      "default": "admin_user",
+      "recipes": [
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
     "backup/database/password": {
       "display_name": "Backup database user",
       "description": "The db pasword for database-related backups.",
       "required": "optional",
-      "default": [
-        "mysql",
-        "test"
-      ],
       "recipes": [
         "backup"
       ],

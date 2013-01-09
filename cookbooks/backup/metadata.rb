@@ -37,7 +37,7 @@ attribute "backup/database/username",
   :default => 'admin_user',
   :recipes => [ "backup" ]
 
-attribute "backup/database/password",
+attribute "backup/database/user",
   :display_name => "Backup database user",
   :description => "The db pasword for database-related backups.",
   :required => "optional",
@@ -48,7 +48,6 @@ attribute "backup/database/password",
   :display_name => "Backup database user",
   :description => "The db pasword for database-related backups.",
   :required => "optional",
-  :default => [ 'mysql', 'test' ],
   :recipes => [ "backup" ]
 
 attribute "backup/s3/bucket_region",
