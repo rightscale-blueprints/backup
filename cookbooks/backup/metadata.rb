@@ -6,6 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.textile'))
 version          "0.0.1"
 
 depends "aws"
+depends "fog"
 
 recipe "backup", "Sets up the backup RubyGem (plus configuration) and it's dependencies."
 
