@@ -1,0 +1,30 @@
+{
+  "name": "fog",
+  "description": "Installs/Configures FOG",
+  "long_description": "Travis-ci status: [![Build Status](https://secure.travis-ci.org/jackl0phty/opschef-cookbook-fog.png?branch=master)](http://travis-ci.org/jackl0phty/opschef-cookbook-fog)\n\nDescription\n===========\n\nThis cookbook will install FOG, a __F__ree and __O__pen __G__host server.\n\nFOG has the ability to image the following platforms:\n\n* Windos XP\n* Windows Vista\n* Windos 7\n* limited Linux support\n\nThe project's homepage can be found at [fog](http://www.fogproject.org/)\n\nNote about cookbook testing\n===========================\n\nThis cookbook has only been tested against Linux Mint!\n\nSupported Platforms\n===================\n\nThe following platforms are supported by this cookbook:\n\n* Debian\n* Ubuntu\n* Mint\n\nRequirements\n============\n\nThe following packages (based on Linux Mint) are required for FOG:\n\n* mysql-client\n* mysql-server\n* php5\n* isc-dhcp-server\n* tftpd-hpa\n* tftp-hpa\n* nfs-kernel-server\n* vsftpd\n* net-tools\n* wget\n* xinetd\n* sysv-rc-conf\n* tar\n* gzip\n* build-essential\n* cpp\n* gcc\n* g++\n* m4\n* htmldoc\n* perl\n* libcrypt-passwdmd5-perl\n* lftp\n* ssh\n* php-gettext\n* clamav-freshclam\n\nAttributes\n==========\n<pre><code>\ndefault['fog']['version'] = \"0.32\"\n</pre></code>\n\nUsage\n=====\n\n* You should only need to apply the __fog__ recipe if you're using Linux Mint.\nPossibly the same thing for Debian/Ubuntu but I haven't tested that!\n\n* You're MySQL root password should be in /etc/mysql/grants.sql.\n\n* If you're MySQL password isn't blank, then you'll need to add it to /var/www/fog/commons/config.php \n\n* You'll need to execute /opt/fog_0.32/bin/installfog.sh as root or via sudo.\n",
+  "maintainer": "Gerald L. Hevener Jr., M.S.",
+  "maintainer_email": "jackl0phty@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "mysql": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.2"
+}

@@ -12,6 +12,10 @@ cookbook 'aws',
   :git => 'https://github.com/opscode-cookbooks/aws',
   :ref => 'master'
   
+cookbook 'fog',
+  :git => 'git://github.com/jackl0phty/opschef-cookbook-fog',
+  :ref => 'master'
+  
 cookbook 'system',
    :git => 'https://github.com/flaccid/cookbooks',
    :path => 'cookbooks/system',
