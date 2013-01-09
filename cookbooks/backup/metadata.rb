@@ -34,14 +34,7 @@ attribute "backup/database/username",
   :display_name => "Backup database user",
   :description => "The db user for database-related backups.",
   :required => "optional",
-  :default => 'admin_user',
-  :recipes => [ "backup" ]
-
-attribute "backup/database/user",
-  :display_name => "Backup database user",
-  :description => "The db pasword for database-related backups.",
-  :required => "optional",
-  :default => 'admin_user',
+  :default => 'mysql',
   :recipes => [ "backup" ]
 
 attribute "backup/database/password",
@@ -61,7 +54,6 @@ attribute "backup/s3/bucket_name",
   :display_name => "Backup S3 bucket name",
   :description => "The default S3 bucket name used with S3 related backups.",
   :required => "optional",
-  :default => 'us-east-1',
   :recipes => [ "backup" ]
   
 attribute "backup/s3/keep",
@@ -106,9 +98,9 @@ attribute "aws/aws_access_key_id",
   :default => "YOUR_ACCESS_KEY",
   :recipes => [ "aws", "backup" ]
 
-attribute "aws/aws_access_key_id",
+attribute "aws/aws_secret_access_key",
   :display_name => "AWS Secret Access Key",
   :description => "The AWS secret access key to be used with EC2 related backups.",
   :required => "recommended",
-  :default => "aws_secret_access_key",
+  :default => "YOUR_SECRET_ACCESS_KEY",
   :recipes => [ "aws", "backup" ]

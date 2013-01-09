@@ -67,21 +67,7 @@
       "display_name": "Backup database user",
       "description": "The db user for database-related backups.",
       "required": "optional",
-      "default": "admin_user",
-      "recipes": [
-        "backup"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "backup/database/user": {
-      "display_name": "Backup database user",
-      "description": "The db pasword for database-related backups.",
-      "required": "optional",
-      "default": "admin_user",
+      "default": "mysql",
       "recipes": [
         "backup"
       ],
@@ -122,7 +108,6 @@
       "display_name": "Backup S3 bucket name",
       "description": "The default S3 bucket name used with S3 related backups.",
       "required": "optional",
-      "default": "us-east-1",
       "recipes": [
         "backup"
       ],
@@ -175,10 +160,25 @@
       "type": "string"
     },
     "aws/aws_access_key_id": {
+      "display_name": "AWS Access Key ID",
+      "description": "The AWS access key ID to be used with EC2 related backups.",
+      "required": "recommended",
+      "default": "YOUR_ACCESS_KEY",
+      "recipes": [
+        "aws",
+        "backup"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "aws/aws_secret_access_key": {
       "display_name": "AWS Secret Access Key",
       "description": "The AWS secret access key to be used with EC2 related backups.",
       "required": "recommended",
-      "default": "aws_secret_access_key",
+      "default": "YOUR_SECRET_ACCESS_KEY",
       "recipes": [
         "aws",
         "backup"
